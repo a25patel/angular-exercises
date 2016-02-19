@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>{{greeting}} Intro</title>
+
+  </head>
+  <body>
+   <!-- Example 1: Using handlebars in Angular  -->
+   <h1>Example 1</h1>
+    <p>{{1+6}}</p>
+
+    <!-- Example 2: setting variables and seeing real time updates in angular, 2 way data binding  -->
+    <h1>Example 2</h1>
+    <input type="text" ng-model='greeting' ng-init='greeting="Angular"'>
+    <p>{{greeting}}, a front end javascript framework</p>
+
+    <!-- Example 3:
+      ng-model='name' - binding the value user inputs into text area to the property of name. evalutes expression on current $scope. -->
+      <h1>Example 3</h1>
+    <input type="text" placeholder='What is your name?' ng-model='name'>
+    <h4>My Name is: {{name}}</h4>
+
+    <!-- Example 4: Selecting from a dropdown menu  -->
+    <h1>Example 4</h1>
+    <select ng-model='pet'>
+      <option>Dogs</option>
+      <option>Cats</option>
+      <option>Dogs and Cats</option>
+      <option>Niether</option>
+    </select>
+    <h3>I Love {{pet}}</h3>
+
+    <!-- Example 5: Simple Expressions  -->
+    <h1>Example 5</h1>
+    <div>
+      <p>  1 + 2 = {{1+2}} </p>
+      <p>My Name is {{'BoJack' + ' Horseman'}} </p>
+      <p>Array [13,46,34,87,65] is {{[13,46,34,87,65].length}} items long</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js" charset="utf-8"></script>
+  </body>
+</html>
+
+<!-- Questions:
+
+** Unit 1 **
+1. Why learn Angular over other front-end frameworks?
+2. 3 common complaints about Angular?
+3. Yes Angular is a MVC Framework
+4. What is 'ng-app' and what does it do?
+5. What does 'ng' stand for?
+
+** Unit 2 **
+1. What does 'ng-model' do?
+2. What is 'dirty checking'
+3. Set the initial value of name to 'BoJack'
+4. What are the {{}}? Why use handlebars?
+5. Research the '$digest' Loop
+ -->

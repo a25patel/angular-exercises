@@ -11,9 +11,9 @@ Unit 1:
  * [Built-In Directives](/Unit-1/05-built-in-directives.md)
  * [Intro to Controllers](/Unit-1/06-intro-to-controllers.md)
  * [Scope](/Unit-1/07-intro-to-scope.md)
- * [Angular Events](/Unit-1/08-intro-to-events.md) 
- * [Form Validation](/Unit-1/09-form-validation.md) 
- * [Animations](/Unit-1/10-animation.md) 
+ * [Angular Events](/Unit-1/08-intro-to-events.md)
+ * [Form Validation](/Unit-1/09-form-validation.md)
+ * [Animations](/Unit-1/10-animation.md)
  * [Unit 1 Assessment Reddit Clone](/Unit-1/11-reddit-clone.md)
 
 Unit 2:
@@ -42,7 +42,7 @@ Unit 3 - Building Apps with the MEAN Stack
  * [ui-router](/Unit-3/07-ui-router.md)
  * [Unit 3 Assessment Reddit Clone Redux](/Unit-3/08-unit-3-assessment.md)
 
-Unit 4 (Optional) - Firebase, Restructuring Angular Apps, Backend Integration with Rails 
+Unit 4 (Optional) - Firebase, Restructuring Angular Apps, Backend Integration with Rails
 
  * [Firebase Intro](/Unit-4-(optional)/01-firebase-intro.md)
  * [AngularFire Intro](/Unit-4-(optional)/02-angularfire-intro.md)
@@ -79,6 +79,7 @@ Staying true to an iterative approach to coding, we'll start slow, defining ever
 
 1. Create an `index.html` file.
 1. Add the Angular dependency. For now, we're going to utilize a CDN - `https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js`.
+or cloudflare - https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js
 1. Add the `ng-app` attribute to the `<html>` element in your document. This indicates that *everything* inside of the `<html>` element - from the opening to closing tag - is part of an Angular app. In other words, all Angular code/tags that fall inside the `<html>` element will be rendered by the Angular interpreter. *Get used to that `ng` prefix as you will be seeing it A LOT!*
 1. Test it out! Add the following Angular tag anywhere inside of the `<body>` tag - `<p>{{1 + 6}}<p>`. Open the page in your browser. If all is well then you should see `7`.
 1. Finally, update the title element - `<title>{{ greeting }} World</title>` - and add the following two paragraphs:

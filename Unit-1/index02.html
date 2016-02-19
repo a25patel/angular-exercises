@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Example 1: Practicing some filters  -->
+    <h1>Example 1</h1>
+      <h3>A. Currency Filter</h3>
+        <div>
+          <input type="text" ng-model='amount' placeholder='Insert a number'>
+          <!-- default $  -->
+          <p>The price is {{amount | currency}}</p>
+          <!-- choosing your currency  -->
+          <p>The US price is {{amount | currency:"USD$"}} and the Franc is {{amount | currency: '&#8355;'}}</p>
+          <!-- No Fractions  -->
+          <p>The price is {{amount | currency:'USD$':0}}</p>
+        </div>
+
+      <h3>B. Date Filter</h3>
+        <div>
+          <input type="text" ng-model='date' placeholder=' Date'>
+          The Date is {{date | date}}
+          {{1144323623010 | date:'medium'}}
+        </div>
+
+      <h3>C. Filter Filter </h3>
+        <h4>1. Search Bar </h4>
+          <div ng-init="friends = [
+            {name:'John', phone:'555-1276', age:'24'},
+            {name:'Mary', phone:'800-BIG-MARY', age:'56'},
+            {name:'Mike', phone:'555-4321', age:'18'}
+            ]">
+          </div>
+          <label>Search: <input ng-model="searchText"></label>
+          <table id="searchTextResults">
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+            </tr>
+            <tr ng-repeat="friend in friends | filter:searchText">
+              <td>{{friend.name}}</td>
+              <td>{{friend.phone}}</td>
+            </tr>
+          </table>
+
+        <h4>2. Strict Search: Search by anything, name, phone, equality</h4>
+          <label>Any: <input ng-model="search.$"></label> <br>
+          <label>Name only <input ng-model="search.name"></label><br>
+          <label>Phone only <input ng-model="search.phone"></label><br>
+          <table id="searchObjResults">
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+            </tr>
+            <tr ng-repeat="friendObj in friends | filter:search:strict">
+              <td>{{friendObj.name}}</td>
+              <td>{{friendObj.phone}}</td>
+            </tr>
+          </table>
+
+      <h3>D. Json Filter</h3>
+      <div>
+        <h4>Normal Json Object</h4>
+        <pre>
+          {{
+            {
+              'First Name': 'Aanal',
+              'Last Name': 'Patel'
+            }
+          | json}}
+        </pre>
+        <h4>E. Json spaced </h4>
+        <pre>
+          {{
+            {
+              'First Name': 'Aanal',
+              'Last Name': 'Patel'
+            }
+            | json:6}}
+        </pre>
+      </div>
+
+      <h3>F. Limit Filter</h3>
+      <div>
+        <label>
+          Enter a Number:
+          <input type="number" step="1" ng-model='numbers'>
+        </label>
+        <p>Output limit of 3 of your number: {{ numbers | limitTo:3 }}</p>
+        <label>
+          Enter a word:
+          <input type="word" step="1" ng-model='letters'>
+        </label>
+        <p>Output limit of 3 of your word: {{ letters | limitTo:3 }}</p>
+
+      <h3>G. LowerCase/UpperCase Filter </h3>
+        <div>
+          <input type="text" ng-model='name' placeholder='First Name'>
+          Hello: {{ name | lowercase }}
+          Hello: {{name | uppercase}}
+        </div>
+
+      <h3>H. Number Filter </h3>
+        <input type="number" ng-model='value'>
+          My Number: {{value | number}}
+          My Number without decimals: {{value | number:0}}
+          My Number as a negative: {{-value | number:2}}
+
+      <h3>I. Order By Filter</h3>
+        <table class="friend">
+          <tr>
+            <th>Name |</th>
+            <th>Phone Number |</th>
+            <th>Age</th>
+          </tr>
+          <tr ng-repeat="friend in friends | orderBy:'-age'">
+            <td>{{friend.name}}</td>
+            <td>{{friend.phone}}</td>
+            <td>{{friend.age}}</td>
+          </tr>
+        </table>
+
+    <h1>Example 2</h1>
+      <div>
+        How many digits or pi do you want?
+        <select ng-model='numbers'>
+          <option> 1</option>
+          <option> 2</option>
+          <option> 3</option>
+          <option> 4</option>
+          <option> 5</option>
+          <option> 6</option>
+          <option> 7</option>
+        </select> <br>
+        Here you go! The first {{numbers}} digits of pi! <br>
+        {{3.14159265359 | number:numbers}}
+      </div>
+
+    <h1>Example 3: Tip Calculator</h1>
+      <div>
+        How much did your meal cost?
+        <input type="text" ng-model='mealCost'> <br>
+        How much do you want to tip?
+        <select ng-model='percentage'>
+          <option value='.10'>10%</option>
+          <option value='.15'>15%</option>
+          <option value='.20'>20%</option>
+        </select> <br>
+        Subtotal: {{mealCost | currency}} <br>
+        Tip: {{ percentage * mealCost | currency }}
+      </div>
+
+    <h1></h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js" charset="utf-8"></script>
+  </body>
+</html>
