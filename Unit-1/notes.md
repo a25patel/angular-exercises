@@ -60,8 +60,12 @@ Unit 1.5 L built in directives
     3. ?  
     4. ?
 
-* Built in Directives: 
+* Built in Directives:
+https://docs.angularjs.org/api/ng/directive
   * ng-repeat
+    - iterate over a collection and create a template for each item
+    - like forEach
+    
   * ng-hide
   * ng-href
   * ng-class

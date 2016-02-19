@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Angular - Directives</title>
+  </head>
+  <body>
+    <h1>Example 1: ng-repeat</h1>
+      <h3>Names</h3>
+      <div ng-init="names=['Jane', 'John', 'Mary', 'Bob']">
+        <ul>
+          <li ng-repeat='name in names'>{{name}}</li>
+        </ul>
+      </div>
+      <h3>Symbols</h3>
+      <div ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
+        <ul>
+          <li ng-repeat='symbol in symbols'>{{symbol}}</li>
+        </ul>
+      </div>
+      <h3>Duplicates</h3>
+      <div ng-init="numbers=[1, 2, 5, 4, 4, 4]">
+        <ul>
+          <li ng-repeat='number in numbers track by $index'>{{number}}</li>
+        </ul>
+      </div>
+      <h3>Objects</h3>
+      <div ng-init='people=[
+        {name:"mike", age:23},
+        {name:"andy", age:34},
+        {name:"reid", age:45},
+        {name:"reid", age:45}
+      ]'>
+        <ul>
+          <li ng-repeat='person in people'>{{person.name}} & {{person.age}}</li>
+        </ul>
+      </div>
+      <h3>One Object</h3>
+      <div ng-init='person = {name: "mike", age: 35, gender: "male"}'>
+        <ul>
+          <li ng-repeat='attribute in person'>{{attribute}}</li>
+        </ul>
+      </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js" charset="utf-8"></script>
+  </body>
+</html>
