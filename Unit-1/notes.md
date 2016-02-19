@@ -46,4 +46,46 @@ Unit 1.4
     - CANNOT write conditionals or loops inside an expression
 * Filters: format the data before displaying it
   - Built in directives
-  - Can build your own filters 
+  - Can build your own filters
+  _____Unit 1.4 _____
+  - https://docs.angularjs.org/guide/expression
+  - <b id="f1">https://docs.angularjs.org/guide/filter</b> [↩](#a1)
+
+Unit 1.5 L built in directives
+* Directives: add functionality to HTML elements and attributes.
+  - Create dynamic components that re-render whenever underlying data changes.
+  - Writing a directive:
+    1. Tag: <burger></burger>
+    2. Attributes: <div burger='southern'></div>
+    3. ?  
+    4. ?
+
+* Built in Directives: 
+  * ng-repeat
+  * ng-hide
+  * ng-href
+  * ng-class
+  * ng-src
+  * ng-app
+  * ng-show
+  * ng-click
+  * ng-disabled
+  * ng-checked
+  * ng-selected
+  * ng-model
+  * ng-style
+  * ng-disabled
+  * ng-readonly
+  * ng-include
+  * ng-switch
+  * ng-controller
+  * ng-view
+  * ng-if
+  * ng-init
+  * ng-bind
+  * ng-cloak
+  * ng-bind-template
+  * ng-model-options
+  * ng-change
+  * ng-form
+  * ng-submit

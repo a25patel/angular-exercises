@@ -152,7 +152,29 @@
         Tip: {{ percentage * mealCost | currency }}
       </div>
 
-    <h1></h1>
+    <h1>Example 4: Expression </h1>
+    {{this}} - Scope object
+
+    <h1>Example 5: Mad Libs </h1>
+      <div>
+        <label for="name">Boy's Name</label>
+        <input type="text" name='name' ng-model='name' placeholder="Enter a boy's name"><br>
+        <label for="adjective">Adjective</label>
+        <input type="text" name='adjective' ng-model='adjective' placeholder='Enter an adjective...'><br>
+        <label for="noun1">Plural Noun</label>
+        <input type="text" name='noun1' ng-model='noun1' placeholder='Enter a plural noun'><br>
+        <label for="noun2">Plural Noun</label>
+        <input type="text" name='noun2' ng-model='noun2' placeholder='Enter a plural noun'><br>
+        <label for="insect">Insect, plural</label>
+        <input type="text" name='insect' ng-model='insect' placeholder='Enter an insect, plural'><br>
+        <label for="noun3">Plural Noun</label>
+        <input type="text" name='noun3' ng-model='noun3' placeholder='Enter a plural noun'><br>
+        <label for="verb">A verb ending in 'S'</label>
+        <input type="text" name='verb' ng-model='verb' placeholder='Enter a verb ending in "S" '><br>
+      </div>
+      <div>
+        <h3>I'm in love with <span>{{name |uppercase}}</span>. He's so <span>{{adjective |uppercase}}</span>! He has big flat <span>{{noun1 |uppercase}}</span>, and when our <span>{{noun2 |uppercase}}</span> meet, I get <span>{{insect |uppercase}}</span> in my stomach. I've fallen for him like a ton of <span>{{noun3 |uppercase}}</span>, and he <span>{{verb |uppercase}}</span> for me, too. But I think he's got another girlfriend. What should I do?</h3>
+      </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js" charset="utf-8"></script>
   </body>
 </html>
