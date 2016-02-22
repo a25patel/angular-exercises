@@ -1,9 +1,9 @@
-____Unit 1 ____
+#____Unit 1 ____
 * [Angular Docs](https://docs.angularjs.org/api)
 * [Thinking in Angular](http://stackoverflow.com/questions/14994391/thinking-in-angularjs-if-i-have-a-jquery-background/15012542#15012542)
 * [AngularJS by Example - Building a Bitcoin Investment Calculator](https://github.com/mjhea0/thinkful-angular)
 
-Unit 1.2
+#Unit 1.2
  - Two-way data binding: allowing for dynamic, live templates, automatically update when data changes.
   * When model changes - view knows
   * When view changes - model knows
@@ -13,7 +13,7 @@ Unit 1.2
   * [`$watch`](https://www.ng-book.com/p/The-Digest-Loop-and-apply/)
   * [ng-cloak StackOverflow discussion](http://stackoverflow.com/questions/12866447/prevent-double-curly-brace-notation-from-displaying-momentarily-before-angular-j)
 
-Unit 1.3
+#Unit 1.3
 * Model: How we model our data in code
   - allowed to model data in JSON objects
   - gives us services and factories, data modeling tools
@@ -41,7 +41,7 @@ Unit 1.3
   _____Unit 1.3 ____
     - [MVC and MVVM with AngularJS](http://codechutney.in/blog/javascript/mvc-and-mvvm-with-angularjs/)
 
-Unit 1.4
+#Unit 1.4
 * Expressions: like javascript snippets
     - CANNOT write conditionals or loops inside an expression
 * Filters: format the data before displaying it
@@ -51,7 +51,7 @@ Unit 1.4
   - https://docs.angularjs.org/guide/expression
   - <b id="f1">https://docs.angularjs.org/guide/filter</b> [↩](#a1)
 
-Unit 1.5 L built in directives
+#Unit 1.5 built in directives
 * Directives: add functionality to HTML elements and attributes.
   - Create dynamic components that re-render whenever underlying data changes.
   - Writing a directive:
@@ -65,7 +65,9 @@ https://docs.angularjs.org/api/ng/directive
   * ng-repeat
     - iterate over a collection and create a template for each item
     - like forEach
-    
+  * ng-cloak
+  * ng-include = 'html file'
+    - allows you to include another HTML file in your document
   * ng-hide
   * ng-href
   * ng-class
@@ -73,6 +75,7 @@ https://docs.angularjs.org/api/ng/directive
   * ng-app
   * ng-show
   * ng-click
+    - run a specific method on the current $scope when an element is clicked. 
   * ng-disabled
   * ng-checked
   * ng-selected
@@ -93,3 +96,21 @@ https://docs.angularjs.org/api/ng/directive
   * ng-change
   * ng-form
   * ng-submit
+  * ng-pluralize
+    - shows different text based on the numerical value of a model
+    <p><ng-pluralize count="people" when="{'0': 'No one loves angular :\(', '1': '{} person loves angular', '-1': '{} person loves angular?????', 'other': '{} people love angular'}"></ng-pluralize>
+
+#Unit 1.6 Controllers
+Provide properties and functionality for use in the view. Functions that provide data for use in the views
+*$scope* -javascript object that glues together controllers and views. available to both the view and controller  
+* [Controllers Docs](https://docs.angularjs.org/guide/controller)
+
+#Unit 1.7 Scope
+*What*
+  - object used for data binding, we can define methods and properties on. automatically injected in our controller so we can use it.
+*$rootscope*
+  - Every app has a single root scope
+  - adding $rootscope as a parameter to the callback function on the .controller method
+  app.controller('name', function($scope, $rootscope){
+    var rootScope = angular.element(document).scope()
+    })

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Controllers</title>
+  </head>
+  <body ng-controller='mainController'>
+      <input ng-model="name" type="text" placeholder="What is your name">
+      <h1>My name is: {{name}} and I love {{favColor}}</h1>
+      <h3>Seconds in A Century = {{secondsInACentury | number }}</h3>
+      <h3>Today's Date is {{rightNow | date:'EEEE, MMMM d, y'}}</h3>
+
+  <!-- CDNS  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js" charset="utf-8"></script>
+
+  <!-- Controllers  -->
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>

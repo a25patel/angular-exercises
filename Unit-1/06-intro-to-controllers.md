@@ -69,7 +69,7 @@ In essence, they manage the view.
 Requirements:
 
 1. Write another controller called "ExercisesController" which you will use for the next 3 exercises.
-1. Add a property called `FavColor` and give it an initial value of your favorite color. Display it in the view.
+1. Add a property called `FavColor` and give it an initial value of your favorite color. Display it in the view. 
 1. Add another property called `secondsInACentury`. It should be equal to the number of seconds in a century (don't worry about leap years and leap seconds). Make sure you actually calculate the answer with code, instead of just looking it up. Finally, display the answer in your template inside of an `h3` tag. Use a built-in filter to format the huge number with commas in the right place.
 1. Create a property called `rightNow` in the controller that is equal to the current time (use a built-in JS function to find the time). Display it in the view and format it nicely (using a built-in filter) so that it looks something like this:
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app = 'myApp'>
+  <head>
+    <meta charset="utf-8">
+    <title>Events </title>
+  </head>
+  <style media="screen">
+  .player {
+    display: inline-block;
+    height: 200px;
+    width:200px;
+    background-color: skyblue;
+    color: white;
+    text-align: center;
+  }
+
+  .score1,  .score2{
+    font-size: 72pt;
+  }
+
+  .reset{
+    font-size: 18pt;
+    padding: 10px;
+  }
+
+  .red{
+    background-color: red;
+  }
+
+  .green{
+    background-color: green;
+  }
+
+
+.add {
+background-color: green;
+color: white;
+}
+
+th, tr {
+width: 250px;
+text-align: left;
+border-bottom: 1px solid;
+}
+
+tr:nth-child(even) {
+background: #CCC;
+}*/
+  </style>
+  <body ng-controller='mainController'>
+    <!-- Random Number  -->
+    <h2>The number is {{number}}</h2>
+    <button type="button" name="button" ng-click='pickRandomNumber()'> Pick Random Number
+    </button>
+
+    <!-- Word Reversal  -->
+    <h2>Word Reverser</h2>
+    <input type="text" name="word" ng-model='word'>
+    <h4>Your word is: {{ word }}</h4>
+    <button type="button" name="reverse" ng-click='reverse(word)'>
+      Reverse!
+    </button>
+
+    <!-- Ping Pong  -->
+    <div ng-controller='pingPong '>
+      <h2>Ping Pong Score Keeper </h2>
+      <div class="player1 player" ng-class='{red: score2 >= 11, green: score1 >= 11 }' ng-click='addPoint1(score1)'>
+        <h1>Player 1</h1>
+        <div class="score1">
+          {{score1}}
+        </div>
+      </div>
+      <div class="player2 player" ng-class='{red: score1 >= 11, green: score2 >= 11 }' ng-click='addPoint2(score2)'>
+          <h1>Player 2</h1>
+          <div class="score2">
+            {{score2}}
+          </div>
+      </div>
+      <button type="button" name="resetScore" class='reset' ng-click='reset()'>Reset!</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js" charset="utf-8"></script>
+
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
+
+<!--
+
+
+    <h1>Contact List Exercise</h1>
+    <div ng-controller="contacts">
+      <label for="name">Name</label>
+      <input type="text" id="name" ng-model="name"></input>
+      <label for="email">Email</label>
+      <input type="text" id="email" ng-model="email"></input>
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" ng-model="phone"></input>
+      <button class='add' ng-click='addContact(name, email, phone)'>Add Contact</button>
+      <br>
+      <label for="Search">Search</label>
+      <input type="text" id="search" ng-model="search">
+      <br>
+      <table>
+        <thead>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+        </thead>
+        <tbody>
+          <tr ng-repeat="contact in contacts | filter:search" ng-mouseover='show()'>
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.phone}}</td>
+        </tbody>
+      </table>
+    </div>
+
+  </body>
+</html>
+Status API Training Shop Blog About Pricing -->

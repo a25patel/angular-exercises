@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <style>
+    .highlight{
+      background-color: yellow;
+    }
+    .red{
+      color: red;
+    }
+    .green{
+      color: green;
+    }
+  </style>
+
+  <body>
+    <h1>Example 1</h1>
+      <div ng-show='3 + 4 == 8'> Show 8 </div>
+      <div ng-show='3 + 4 == 7'> Show 7 </div>
+      <!-- Incorrect, don't hide -->
+      <div ng-hide='3 + 4 == 8'> hide 8 </div>
+      <div ng-hide='3 + 4 == 7'> hide 7 </div>
+
+      * What does angular do to hide an element?
+       The element is shown or hidden by removing or adding the ng-hide CSS class onto the element. The .ng-hide CSS class is predefined in AngularJS and sets the display style to none (using an !important flag)<br>
+      *!important
+      This is because the .ng-hide selector can be easily overridden by heavier selectors. For example, something as simple as changing the display style on a HTML list item would make hidden elements appear visible. This also becomes a bigger issue when dealing with CSS frameworks. By using !important, the show and hide behavior will work as expected despite any clash between CSS selector specificity (when !important isn't used with any conflicting styles). If a developer chooses to override the styling to change how to hide an element then it is just a matter of using !important in their own CSS code.<br>
+      <b>display: none!important</b>
+
+    <h1>Example 2: Password Validation</h1>
+      <h3>Signup Page</h3>
+      <input type="password" ng-model='password'><br>
+      Your password is {{password.length}} characters<br>
+      <p ng-show='password.length < 6'> Your password is invalid!</p>
+      <input type="submit" value="Sign Up!" ng-show='password.length >= 6'>
+
+    <h1>Example 3: ng-class</h1>
+      <div ng-class="{highlight: 4 + 4 == 8}"> 4 + 4 = 8 </div>
+      <div ng-class="{highlight: 4 + 4 == 10}"> 4 + 4 = 10 </div>
+
+    <h1>Example 4: Passworld Validator with color </h1>
+      <h3>Signup Page</h3>
+      <input type="password" ng-model='password2' ng-class='{red: password2.length < 6, green: password2.length >= 6}'><br>
+      <p ng-class='{red: password2.length < 6, green: password2.length >= 6}'>
+      Your password is {{password2.length}} characters<br>
+      </p>
+      <p ng-show='password2.length < 6'> Your password is invalid!</p>
+      <input type="submit" value="Sign Up!" ng-show='password2.length >= 6'>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js" charset="utf-8"></script>
+  </body>
+</html>
